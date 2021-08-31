@@ -1,0 +1,16 @@
+{
+    "name": "berlioz/berlioz-generator",
+    "type": "library",
+    "description": "An Berlioz generator for Controller, Entity, ",
+    "keywords": ["relevant","tags","go","here"],
+    "homepage": "https://vigicorp.fr",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Welly Arnold KOUYA",
+            "email": "welly-arnold.kouya@vigicorp.fr",
+            "homepage": "https://vigicorp.fr",
+            "role": "Developer"
+        }
+    ]
+}
