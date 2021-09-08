@@ -1,10 +1,11 @@
 <?php
 declare(strict_types=1);
 
-use Berlioz\Generator\Command\Enum\GeneratorEnum;
 namespace Berlioz\Generator\Command\Functions;
+use Berlioz\Generator\Command\Enum\GeneratorEnum;
+use Berlioz\Generator\Command\Helper\GeneratorInput;
 
-class ControllerGenerator 
+class ControllerGenerator
 {    
     
     /**
@@ -49,7 +50,7 @@ class ControllerGenerator
      */
     public function controllerGenerator(): string
     {
-        $controllerName = $this->input("Please enter the name of your controller" . PHP_EOL);
+        $controllerName = GeneratorInput::input("Please enter the name of your controller" . PHP_EOL);
         $controllerFile = $controllerName . "Controller.php";
         mkdir(GeneratorEnum::CONTROLLERS_PATH . $controllerName, 0700);
         $fh = fopen(GeneratorEnum::CONTROLLERS_PATH . $controllerName . $controllerFile, 'w') or die("can't open file");
@@ -59,20 +60,5 @@ class ControllerGenerator
         fclose($fh);
 
         return "Thank you !" . PHP_EOL;
-    }
-    
-    /**
-     * input
-     *
-     * @param  mixed $prompt
-     * @return string
-     */
-    public function input(string $prompt = null): string
-    {
-        echo $prompt;
-        $handle = fopen("php://stdin", "r");
-        $output = fgets($handle);
-
-        return trim($output);
     }
 }
